@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter } from "next/router";
 import { Data } from "../api/example_body";
 import { useEffect, useState } from "react";
