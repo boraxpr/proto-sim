@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "strictNullChecks": true,
+    "strict":true,
+    "types": ["pg"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,9 +16,15 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/layout.js",
+    "src/pages/cropper/index.jsx"
+  ],
   "exclude": ["node_modules"]
 }
