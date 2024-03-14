@@ -3,6 +3,8 @@ import { procedure, router } from "../trpc";
 import { TRPCError, initTRPC } from "@trpc/server";
 import { Context } from "../context";
 import { t } from "@/src/server/trpc";
+import { drizz } from "@/db/client";
+import { userTable } from "@/auth/client";
 
 export const protectedProcedure = t.procedure.use(async function isAuthed(
   opts
@@ -34,6 +36,7 @@ export const appRouter = t.router({
         greeting: `hello ${opts.input.text}`,
       };
     }),
+
   admin: t.router({
     secret: protectedProcedure
       .input(
@@ -47,6 +50,13 @@ export const appRouter = t.router({
         };
       }),
   }),
+
+  user: t.procedure.query(async (opts) => {
+    const users = await drizz.select().from(userTable);
+    return {
+      users: users,
+    };
+  })
 });
 
 // export type definition of API

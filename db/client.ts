@@ -5,7 +5,7 @@ export const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-// export const drizz = drizzle(pool);
+export const drizz = drizzle(pool);
 
 export interface DatabaseUser {
   id: string;

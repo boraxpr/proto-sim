@@ -33,10 +33,7 @@ function App({ Component, pageProps, router }: AppProps) {
           <motion.div
             style={{
               backgroundColor: "wheat",
-              position: "absolute",
               width: "100vw",
-              zIndex: 99999999,
-              top: 0,
             }}
             transition={transitionSpring}
             initial={{ height: "100vh" }}

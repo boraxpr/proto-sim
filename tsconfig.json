@@ -6,7 +6,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -23,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/layout.js",
+    "components/layout.tsx",
     "src/pages/cropper/index.jsx"
   ],
   "exclude": ["node_modules"]
