@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import Cropper from "react-easy-crop";
+import { SetStateAction, useState } from "react";
+import Cropper, { Area } from "react-easy-crop";
 import getCroppedImg from "./cropImage";
 import { Size } from "react-easy-crop";
 import { relative } from "path";
@@ -14,7 +14,7 @@ export default function CropperComponent() {
   const [croppedImage, setCroppedImage] = useState(null);
 
   const [cropSize, setCropSize] = useState();
-  const onCropComplete = (croppedArea, croppedAreaPixels) => {
+  const onCropComplete = (croppedArea: Area, croppedAreaPixels: Area) => {
     console.log(croppedArea, croppedAreaPixels);
     setCroppedAreaPixels(croppedAreaPixels);
   };

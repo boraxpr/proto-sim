@@ -5,6 +5,7 @@ import { AnimatePresence, Spring, motion } from "framer-motion";
 import type { AppProps } from "next/app";
 import Layout from "@/components/layout";
 import { trpc } from "@/utils/trpc";
+// import { Example } from "@/components/Example";
 
 function App({ Component, pageProps, router }: AppProps) {
   const queryClient = new QueryClient();
@@ -16,7 +17,8 @@ function App({ Component, pageProps, router }: AppProps) {
   };
   return (
     <QueryClientProvider client={queryClient}>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
+        {/* <Example /> */}
         <motion.div key={router.route}>
           {/* <motion.div
             style={{
@@ -32,7 +34,7 @@ function App({ Component, pageProps, router }: AppProps) {
           > */}
           <motion.div
             style={{
-              backgroundColor: "wheat",
+              backgroundColor: "black",
               width: "100vw",
             }}
             transition={transitionSpring}

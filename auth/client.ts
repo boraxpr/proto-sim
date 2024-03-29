@@ -15,7 +15,7 @@ export const userTable = pgTable("auth_user", {
   username: varchar("username"),
 });
 
-const sessionTable = pgTable("session", {
+const sessionTable = pgTable("user_session", {
   id: varchar("id").primaryKey(),
   userId: uuid("user_id")
     .notNull()
